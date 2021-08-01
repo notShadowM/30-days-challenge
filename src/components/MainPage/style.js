@@ -23,7 +23,7 @@ export const Container = styled.div`
   .cube{
     width: 16rem;
     position: absolute;
-    left:-18.2rem;
+    left:-17rem;
     bottom: 0;
   }
 
@@ -38,7 +38,7 @@ export const Container = styled.div`
 
     .cube{
       width: 12rem;
-      left:-12rem;
+      left:-11.5rem;
       bottom: 1rem;
     }
   }
@@ -54,7 +54,7 @@ export const Container = styled.div`
 
     .cube{
       width: 10rem;
-      left:-8.8rem;
+      left:-8.4rem;
       bottom: 1.2rem;
     }
   }

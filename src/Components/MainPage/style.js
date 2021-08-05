@@ -18,12 +18,22 @@ export const Black = styled.div`
   width: 600px;
   height: 600px;
   background-color: #222730;
-  transform: rotate(45deg);
   position: relative;
   z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: spin 3.5s linear forwards;
+
+  @keyframes spin{
+    0%{
+      transform: rotate(0);
+    }
+    100%{
+      transform: rotate(405deg);
+    }
+  }
+  
 
   .blue{
     width: 400px;
@@ -39,7 +49,34 @@ export const Black = styled.div`
     height: 100px;
     background-color: #222730;
     border-radius: 50%;
+    /* animation: zoom linear 550ms; */
+    animation-name: zoom,zoom-in-out;
+    animation-duration:550ms,2s;
+    animation-iteration-count: 1,2;
+    animation-delay: 0ms,550ms;
   }
+
+  @keyframes zoom{
+    0%{
+      transform: scale(20,20);
+    }
+    100%{
+      transform: scale(1,1);
+    }
+  }
+  @keyframes zoom-in-out{
+    0%{
+      transform: scale(1,1);
+    }
+    50%{
+      transform: scale(2.5,2.5);
+    }
+    100%{
+      transform: scale(1,1);
+    }
+  }
+
+  
 
   @media (max-width:1024px){
     width: 600px;

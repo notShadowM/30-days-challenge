@@ -1,18 +1,18 @@
-import React from 'react';
-import { Icon, InlineIcon } from '@iconify/react';
-import arrowDownAlt2 from '@iconify-icons/dashicons/arrow-down-alt2';
-import {Container} from "./style"
+import { useState } from "react";
+import { Icon } from "@iconify/react";
+import arrowDownAlt2 from "@iconify-icons/dashicons/arrow-down-alt2";
+import {Container} from "./style";
 
-export default function Block({active,handleClick}) {
+export default function Block({ question, answer }) {
+  const [active, setActive] = useState(false);
+
   return (
     <Container active={active}>
-      <div className="question" onClick={() =>handleClick(prev => !prev)}>
-        <div className="q-title">How many team members can i invite?</div>
+      <div className="question" onClick={() => setActive(!active)}>
+        <div className="q-title">{question}</div>
         <Icon icon={arrowDownAlt2} className="iconify" />
       </div>
-      <div className="para">
-        No more that 2GB. All files in your account must  fit your allotted storge space.
-      </div>
+      <div className="para">{answer}</div>
     </Container>
-  )
+  );
 }

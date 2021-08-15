@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   border: 2px solid #F9FAFA;
-  height: 90%;
+  height: 86%;
   border-radius: 12px;
   position: relative;
 
@@ -66,13 +66,13 @@ export const Container = styled.div`
     bottom: 1rem;
     left: 1rem;
     user-select:none;
-
+    width: 100%;
   }
 
   .colors{
-    flex-basis: 70%;
+    margin-left: 1rem;
+    flex-basis: 100%;
     display: flex;
-    justify-content: space-between;
   }
 
 
@@ -86,12 +86,28 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: .5rem;
     /* animation: scaling 2.5s ease-in-out 2; */
 
     animation-name: shadeReverse,scaling,shade;
-    animation-duration:200ms,1.5s,500ms;
+    animation-duration:200ms,1.2s,500ms;
     animation-iteration-count: 1,2,1;
     animation-timing-function: ease-in-out;
+  }
+
+  .plus{
+    background-color: #404040;
+    color: #fff;
+    font-size:16px;
+    position: relative;
+  }
+
+
+  .colorPicker{
+    position: absolute;
+    top: 1.25rem;
+    left: 0.5rem;
+    z-index: 1;
   }
 
   .true{
@@ -127,24 +143,84 @@ export const Container = styled.div`
     to {background-color: #30FFB7;}
   }
  
+
+  /* shadeReverse,scaling,shade */
   .color:nth-child(1){
-    animation-delay:0.2s,0.2s,3.2s;
+    animation-delay:0.2s,0.2s,2.6s;
   }
   .color:nth-child(2){
-    animation-delay:0.4s,0.4s,3.4s;
+    animation-delay:0.4s,0.4s,2.8s;
   }
   .color:nth-child(3){
-    animation-delay:0.6s,0.6s,3.6s;
+    animation-delay:0.6s,0.6s,3s;
   }
   .color:nth-child(4){
-    animation-delay:0.8s,0.8s,3.8s;
+    animation-delay:0.8s,0.8s,3.2s;
   }
   .color:nth-child(5){
-    animation-delay:1s,1s,4s;
+    animation-delay:1s,1s,3.4s;
+  }
+  .color:nth-child(6){
+    animation-delay:1.2s,1.2s,3.4s;
   }
 
 
-  /* .black{
-    color: #ddd;
-  } */
+
+  .send-btn{
+    width: 96px;
+    height: 36px;
+    background-color: #2984FF;
+    color: #fff;
+    border-radius: 12px;
+    border:none;
+    position: absolute;
+    right: 0;
+    bottom: -3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 12px;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 0.25rem;
+    cursor: pointer;
+  }
+
+  .send-icon{
+    margin-top: -3px;
+    width: 18px;
+  }
+
+  .load{
+    width: 18px;
+    height: 18px;
+    border:solid 3px #fff;
+    border-radius: 50%;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    margin-bottom: 4px;
+        
+    transition: all 0.5s ease-in;
+    animation-name: rotate; 
+    animation-duration: 0.6s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+  }
+  
+  @keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to { 
+        transform: rotate(360deg);
+    }
+}
+
+input{
+  visibility: hidden;
+  position: absolute;
+}
+
 `;
